@@ -12,8 +12,7 @@ various insights.I have also explored various
 applications of pose estimation which I have
 summarized in the applications and future work
 section.
-
-#Introduction 
+# Introduction
 Human body pose estimation from real-time
 videos or images plays a central role in various
 applications such as health tracking, body
@@ -40,7 +39,7 @@ estimation , the CNN features are regressed in
 order to provide joint prediction of the body
 parts.
 
-#MediaPipe Framework
+# Mediapipe Framework
 Mediapipe is a user-friendly and easy to use
 framework which provides a number of
 functionalities such as pose estimation , iris
