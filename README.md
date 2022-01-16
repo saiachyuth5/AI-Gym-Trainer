@@ -61,4 +61,33 @@ out of frame or the face is not visible then the
 detector network is re-run to estimate the pose
 alignment
 
+# BlazePose - Model and Architecture
+The common approach for pose estimation
+involves producing heatmaps for all joints along
+with refining offsets over each coordinate.While
+this is a good and scalable technique , it is too
+heavy for single person pose estimation or to run
+on a mobile device. In contrast , regression
+based techniques are less computationally
+demanding and are also equally scalable.
+BlazePose uses a stacks hourglass architecture
+which gives a significant boost to the quality of
+prediction even with a small number of
+parameters. A encoder-decoder network
+architecture is used to predict the heatmap of all
+the joints , which is followed by another
+regressor which regresses directly on the
+coordinates of all the joints. The heatmap branch
+is used only in the training stage and it is
+discarded during the inference phase which
+results in a lightweight embedding and increase
+in performance. This is what makes the network
+suitable for mobile devices and CPUS. Skip
+connections are actively utilised between
+different layers of the network to achieve a
+balance between the high level and the low level
+features. Also the gradients from the enoder
+network are not propagated back to the heatmap
+trained features which increases the performance
+as well as regression accuracy to a large extent.
 
